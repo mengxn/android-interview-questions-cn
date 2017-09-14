@@ -35,24 +35,24 @@
 > 数据结构与算法问题的难度完全取决于你所申请的公司
 
 * 数组
-    - 数组由一组相同的数据类型组成。它存储在连续的内存空间内，使用索引可以找到元素的地址。数组包括一维数组和多维数组,一维数组是最简单的数据结构,也是最常用的。
+    - 数组由一组相同的数据类型组成。它存储在连续的内存空间内，使用索引可以找到元素的地址。数组包括一维数组和多维数组,一维数组是最简单的数据结构,也是最常用的。值得注意的是，在 Java 语言中，多维数据是通过数组的数组来实现的。例如，`int[10][5]`事实上是一个一维数组，它的每个元素指向一个含有5个元素的一维数组。
 
         | 算法 | 平均 | 最坏 |
         |:-------------:|:-----:|:-----:|
-        | 空间（Space）  | O(n)  | O(n)  |    
-        | 查找（Search） | O(n)  | O(n)  |
-        | 插入（Insert） | O(n)  | O(n)  |
-        | 删除（Delete） | O(n)  | O(n)  |
+        | 空间（Space）  | Θ(n)  | O(n)  |    
+        | 查找（Search） | Θ(n)  | O(n)  |
+        | 插入（Insert） | Θ(n)  | O(n)  |
+        | 删除（Delete） | Θ(n)  | O(n)  |
 
 * 链表
    - 链表看起来更像树，而不是数组，它使用一组结点来表示一个序列。每一个结点都包含数据和一个指针。在链表中，结点中的数据可以为任意类型，而指针则是指向下一结点的引用。链表包含一个头结点和一个尾结点。头结点是链表中的第一个结点，尾结点是最后一个结点。链表不是一个循环数据结构，所以尾结点没有指向头结点的指针，指针为空。一些基础方法的时间复杂度如下：
 
         | 算法          | 平均 | 最坏  |
         |:------------:|:----:|:----:|
-        | 空间 (Space)  | O(n) | O(n) |
-        | 查找 (Search) | O(n) | O(n) |
-        | 插入 (Insert) | O(1) | O(1) |
-        | 删除 (Delete) | O(1) | O(1) |
+        | 空间 (Space)  | Θ(n) | O(n) |
+        | 查找 (Search) | Θ(n) | O(n) |
+        | 插入 (Insert) | Θ(1) | O(1) |
+        | 删除 (Delete) | Θ(1) | O(1) |
 
 * 双向链表
    - 一个双向链表首先是一个链表，但是在每个结点中有两个指针，前驱指针指向前驱结点，后继指针指向后继结点。双向链表也有一个头结点，头结点的后继指针指向第一个结点。最后一个结点的后继指针指向空，但是如果最后一个结点的后继指针指向第一个结点，这时称这个链表为双向循环链表。双向循环链表能非常方便地从每个结点查找它的前驱结点和后继结点。
@@ -61,10 +61,10 @@
             
         | 算法          | 平均 | 最坏  |
         |:------------:|:----:|:----:|
-        | 空间 (Space)  | O(n) | O(n) |
-        | 查找 (Search) | O(n) | O(n) |
-        | 插入 (Insert) | O(1) | O(1) |
-        | 删除 (Delete) | O(1) | O(1) |
+        | 空间 (Space)  | Θ(n) | O(n) |
+        | 查找 (Search) | Θ(n) | O(n) |
+        | 插入 (Insert) | Θ(1) | O(1) |
+        | 删除 (Delete) | Θ(1) | O(1) |
 
 * 栈
     - 栈是一个有着「后进先出」特性的基础数据结构，这就意味着最后一个入栈的元素，也是第一个出栈的。栈就像是一堆书，想要得到书堆中的第一本书（最下面一本），必须把其他的书都先拿走。向栈中添加一个元素的操作被称为 Push（入栈），删除一个元素的操作被称为 Pop（出栈），查看且不删除最后一个入栈的元素的操作被称为 Top 。[实现栈的常用方法是使用链表（LinkedList），也可以使用不允许空值的 StackArray（使用数组实现），还有允许空值的 Vector](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues#Performance_Analysis)
@@ -78,7 +78,7 @@
             </tr>
             <tr>
                 <td>空间 (Space)</td>
-                <td>O(n)</td>
+                <td>Θ(n)</td>
                 <td>O(n)</td>
                 <td rowspan="5">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/250px-Data_stack.svg.png"/>
@@ -86,22 +86,22 @@
             </tr>
             <tr>
                 <td>查找 (Search)</td>
-                <td>O(n)</td>
+                <td>Θ(n)</td>
                 <td>O(n)</td>
             </tr>
             <tr>
                 <td>入栈 (Push)</td>
-                <td>O(1)</td>
+                <td>Θ(1)</td>
                 <td>O(1)</td>
             </tr>
             <tr>
                 <td>出栈 (Pop)</td>
-                <td>O(1)</td>
+                <td>Θ(1)</td>
                 <td>O(1)</td>
             </tr>
             <tr>
               <td>查看栈顶 (Top)</td>
-              <td>O(1)</td>
+              <td>Θ(1)</td>
               <td>O(1)</td>
             </tr>
         </table>
@@ -114,18 +114,120 @@
 
 * 字符串操作
 
-* 二叉树
+* 二叉树 [Wikipedia](https://en.wikipedia.org/wiki/Binary_tree?oldformat=true)
 
 * 二叉搜索树
 
-* 排序算法
+* 排序算法 [Wikipedia](https://en.wikipedia.org/wiki/Sorting_algorithm?oldformat=true)
+    - Using the most efficient sorting algorithm (and correct data structures that implement it) is vital for any program, because data manipulation can be one of the most significant bottlenecks in case of performance and the main purpose of spending time, determining the best algorithm for the job, is to drastically improve said performance. The efficiency of an algorithm is measured in its' "Big O" ([StackOverflow](https://stackoverflow.com/questions/487258/what-is-a-plain-english-explanation-of-big-o-notation)) score. Really good algorithms perform important actions in O(n log n) or even O(log n) time and some of them can even perform certain actions in O(1) time (HashTable insertion, for example). But there is always a trade-off - if some algorithm is really good at adding a new element to a data structure, it is, most certainly, much worse at data access than some other algorithm. If you are proficient with math, you may notice that "Big O" notation has many similarities with "limits", and you would be right - it measures best, worst and average performances of an algorithm in question, by looking at its' function limit. It should be noted that, when we are speaking about O(1) - constant time - we are not saying that this algorithm performs an action in one operation, rather that it can perform this action with the same number of operations (roughly), regrardless of the amount of elements it has to take into account. Thankfully, a lot of "Big O" scores have been already calculated, so you don't have to guess, which algorithm or data structure will perform better in your project. ["Big O" cheat sheet](http://bigocheatsheet.com/)
+    - Bubble sort [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort?oldformat=true) 
+        - Bubble sort is one of the simplest sorting algorithms. It just compares neighbouring elements and if the one that precedes the other is smaller - it changes their places. So over one iteration over the data list, it is guaranteed that **at least** one element will be in its' correct place (the biggest/smallest one - depending on the direction of sorting). This is not a very efficient algorithm, as highly unordered arrays will require a lot of reordering (upto O(n^2)), but one of the advantages of this algorithm is its' space complexity - only two elements are compared at once and there is no need to allocate more memory, than those two will occupy. 
+            <table>
+                <tr>
+                    <th colspan="3" align="center">Time Complexity</th>
+                    <th align="center">Space Complexity</th>
+                </tr>
+                <tr>
+                    <th align="center">Best</th>
+                    <th align="center">Avegage</th>
+                    <th align="center">Worst</th>
+                    <th align="center">Worst</th>
+                </tr>
+                <tr>
+                    <td align="center">Ω(n)</td>
+                    <td align="center">Θ(n^2)</td>
+                    <td align="center">O(n^2)</td>
+                    <td align="center">O(1)</td>
+                </tr>
+            </table>
+    - Selection sort [Wikipedia](https://www.wikiwand.com/en/Selection_sort) 
+        - Firstly, selection sort assumes that the first element of the array to be sorted is the smallest, but to confirm this, it iterates over all other elements to check, and if it finds one, it gets defined as the smallest one. When the data ends, the element, that is currently found to be the smallest, is put in the beginning of the array. This sorting algorithm is quite straightforward, but still not that efficient on larger data sets, because to assign just one element to its' place, it needs to go over all data.
+            <table>
+            <tr>
+                <th colspan="3" align="center">Time Complexity</th>
+                <th align="center">Space Complexity</th>
+            </tr>
+            <tr>
+                <th align="center">Best</th>
+                <th align="center">Avegage</th>
+                <th align="center">Worst</th>
+                <th align="center">Worst</th>
+            </tr>
+            <tr>
+                <td align="center">Ω(n^2)</td>
+                <td align="center">Θ(n^2)</td>
+                <td align="center">O(n^2)</td>
+                <td align="center">O(1)</td>
+            </tr>
+            </table>
+    - Insertion sort [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort?oldformat=true)
+        - Insertion sort is another example of an algorithm, that is not that difficult to implement, but is also not that efficient. To do its' job, it "grows" sorted portion of data, by "inserting" new encountered elements into already (innerly) sorted part of the array, which consists of previously encountered elements. This means that in best case (data is already sorted) it can confirm that its' job is done in Ω(n) operations, while, if all encountered elements are not in their required order as many as O(n^2) operations may be needed.
+            <table>
+            <tr>
+                <th colspan="3" align="center">Time Complexity</th>
+                <th align="center">Space Complexity</th>
+            </tr>
+            <tr>
+                <th align="center">Best</th>
+                <th align="center">Avegage</th>
+                <th align="center">Worst</th>
+                <th align="center">Worst</th>
+            </tr>
+            <tr>
+                <td align="center">Ω(n)</td>
+                <td align="center">Θ(n^2)</td>
+                <td align="center">O(n^2)</td>
+                <td align="center">O(1)</td>
+            </tr>
+            </table>
+    - Merge sort [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort?oldformat=true)
+        - This is a "divide and conquer" algorithm, meaning it recursively "divides" given array in to smaller parts (up to 1 element) and then sorts those parts, combining them with each other. This approach allows merge sort to acieve very high speed, while  doubling required space, of course, but today memory space is more availible than it was a couple of years ago, so this trade-off is considered acceptable.   
+                <table>
+            <tr>
+                <th colspan="3" align="center">Time Complexity</th>
+                <th align="center">Space Complexity</th>
+            </tr>
+            <tr>
+                <th align="center">Best</th>
+                <th align="center">Avegage</th>
+                <th align="center">Worst</th>
+                <th align="center">Worst</th>
+            </tr>
+            <tr>
+                <td align="center">Ω(n log(n))</td>
+                <td align="center">Θ(n log(n))</td>
+                <td align="center">O(n log(n))</td>
+                <td align="center">O(n)</td>
+            </tr>
+            </table>
+    - Quicksort [Wikipedia](https://en.wikipedia.org/wiki/Quicksort?oldformat=true)
+        - Quicksort is considered, well, quite quick. When implemented correctly, it can be a significant number of times faster than its' main competitors. This algorithm is also of "divide and conquer" family and its' first step is to choose a "pivot" element (choosing it randomly, statistically, minimizes the chance to get the worst performance), then by comparing elements to this pivot, moving it closer and closer to its' final place. During this process, the elements that are bigger are moved to the right side of it and smaller elements to the left. After this is done, quicksort repeats this process for  subarrays on each side of placed pivot (does first step recursively), until the array is sorted.
+                <table>
+                <tr>
+                    <th colspan="3" align="center">Time Complexity</th>
+                    <th align="center">Space Complexity</th>
+                </tr>
+                <tr>
+                    <th align="center">Best</th>
+                    <th align="center">Avegage</th>
+                    <th align="center">Worst</th>
+                    <th align="center">Worst</th>
+                </tr>
+                <tr>
+                    <td align="center">Ω(n^2)</td>
+                    <td align="center">Θ(n^2)</td>
+                    <td align="center">O(n^2)</td>
+                    <td align="center">O(1)</td>
+                </tr>
+                </table>  
+    - There are, of course, more sorting algorithms and their modifications. We strongly recommend all readers to familiarize themselves with a couple more, because knowing algorithms is very important quality of a candidate, applying for a job and it shows understanding of what is happening "under the hood".
 
 * 哈希表与哈希图
-
-* 广度优先搜索
-
-* 深度优先搜索
-
+* 寻路算法 [Wikipedia](https://en.wikipedia.org/wiki/Greedy_algorithm?oldformat=true)
+  - Dijkstra 算法
+  - A* 算法
+  - 广度优先搜索
+  - 深度优先搜索
 * 贪心算法
 
 
